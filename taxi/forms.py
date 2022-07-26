@@ -35,5 +35,7 @@ class DriverLicenseUpdateForm(forms.ModelForm):
 class CarSearchForm(forms.Form):
     model = forms.CharField(
         max_length=255,
-        required=False
+        required=False,
+        label="",
+        widget=forms.TextInput(attrs={"placeholder": "Search by model"})
     )

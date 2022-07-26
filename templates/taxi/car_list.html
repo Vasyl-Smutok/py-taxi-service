@@ -9,12 +9,11 @@
     </button>
   </h1>
 
-    <form action="" method="get">
-    {{ search_form.as_p }}
-    <input type="submit" value="🔎">
-    </form>
-
   {% if car_list %}
+      <form action="" method="get" class="form-inline">
+        {{ search_form|crispy }}
+        <input type="submit" value="🔎" class="btn btn-light">
+      </form>
    <table class="table">
     <tr>
       <th>ID</th>
