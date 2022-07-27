@@ -6,9 +6,9 @@
     <li class="list-group-item"><a href="{% url 'login'%}?next={{request.path}}">Login</a></li>
   {% endif %}
 
-  <br>
 
-  <li class="list-group-item"><a href="{% url 'taxi:index' %}">Home</a></li>
+
+  <li style="margin-top: 30px; border-top:1px  solid gainsboro" class="list-group-item"><a href="{% url 'taxi:index' %}">Home</a></li>
   <li class="list-group-item"><a href="{% url 'taxi:driver-list' %}">All drivers</a></li>
   <li class="list-group-item"><a href="{% url 'taxi:car-list' %}">All cars</a></li>
   <li class="list-group-item"><a href="{% url 'taxi:manufacturer-list' %}">All manufacturers</a></li>

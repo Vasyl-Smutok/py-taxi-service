@@ -101,7 +101,8 @@ class CarDetailView(LoginRequiredMixin, generic.DetailView):
 
 class DriverListView(LoginRequiredMixin, generic.ListView):
     model = Driver
-    paginate_by = 2
+    paginate_by = 3
+    template_name = "taxi/driver_list.html"
 
 
 class DriverDetailView(LoginRequiredMixin, generic.DetailView):
