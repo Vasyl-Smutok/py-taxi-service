@@ -2,10 +2,12 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=python,pycharm+all,django,pycharm
 
 ### Django ###
+*.pyc
+*~
+*.swp
 *.log
 *.pot
 **/__pycache__
-*.pyc
 local_settings.py
 db.sqlite3
 db.sqlite3-journal
