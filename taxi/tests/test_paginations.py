@@ -18,7 +18,7 @@ class PaginationDriver(TestCase):
 
     @classmethod
     def setUpTestData(cls):
-        number_of_driver = 13
+        number_of_driver = 15
         for driver_num in range(number_of_driver):
             Driver.objects.create(
                 username=f"Test username {driver_num}",
@@ -27,14 +27,14 @@ class PaginationDriver(TestCase):
                 license_number=f"ASD1234{driver_num}"
             )
 
-    def test_pagination_is_ten(self):
+    def test_pagination_is_seven(self):
         response = self.client.get(DRIVER_URL)
         self.assertTrue('is_paginated' in response.context)
         self.assertTrue(response.context['is_paginated'] is True)
-        self.assertTrue(len(response.context['driver_list']) == 10)
+        self.assertTrue(len(response.context['driver_list']) == 7)
 
     def test_lists_all_driver(self):
-        resp = self.client.get(reverse('taxi:driver-list') + '?page=2')
+        resp = self.client.get(reverse('taxi:driver-list') + '?page=3')
         self.assertTrue('is_paginated' in resp.context)
         self.assertTrue(resp.context['is_paginated'] is True)
-        self.assertTrue(len(resp.context['driver_list']) == 4)
+        self.assertTrue(len(resp.context['driver_list']) == 2)
