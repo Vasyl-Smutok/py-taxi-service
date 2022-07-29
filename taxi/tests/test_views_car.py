@@ -4,12 +4,12 @@ from django.urls import reverse
 
 from taxi.models import Car, Manufacturer
 
-Car_URL = reverse("taxi:car-list")
+CAR_URL = reverse("taxi:car-list")
 
 
 class PrivateCarView(TestCase):
     def test_login_required(self):
-        response = self.client.get(Car_URL)
+        response = self.client.get(CAR_URL)
 
         self.assertNotEqual(response.status_code, 200)
 
@@ -36,7 +36,7 @@ class PublicCarView(TestCase):
             model="Test2 model",
             manufacturer=test_manufacturer1
         )
-        response = self.client.get(Car_URL)
+        response = self.client.get(CAR_URL)
         cars = Car.objects.all()
 
         self.assertEqual(response.status_code, 200)
