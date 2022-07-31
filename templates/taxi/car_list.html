@@ -39,7 +39,7 @@
       </td>
         <td>
         {% for driver_ in car.drivers.all%}
-        {{ driver_.username }} {{ forloop.last|yesno:",&#44;"|safe }}
+        {{ driver_.username }}{{ forloop.last|yesno:",&#44;"|safe }}
         {% endfor %}
         </td>
     </tr>
