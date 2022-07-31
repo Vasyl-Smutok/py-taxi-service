@@ -3,6 +3,8 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import UserCreationForm
 from django.core.exceptions import ValidationError
 
+from taxi.models import Car
+
 
 class DriverCreationForm(UserCreationForm):
     class Meta(UserCreationForm.Meta):
@@ -39,3 +41,15 @@ class CarSearchForm(forms.Form):
         label="",
         widget=forms.TextInput(attrs={"placeholder": "Search by model"})
     )
+
+
+class CarForm(forms.ModelForm):
+    drivers = forms.ModelMultipleChoiceField(
+        queryset=get_user_model().objects.all(),
+        widget=forms.CheckboxSelectMultiple,
+        required=False
+    )
+
+    class Meta:
+        model = Car
+        fields = "__all__"

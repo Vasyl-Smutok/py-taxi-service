@@ -10,11 +10,11 @@
   </h1>
 
   {% if car_list %}
-      <form action="" method="get" class="form-inline">
+      <form action="" method="get" class="form-inline" style="margin-top: 15px">
         {{ search_form|crispy }}
         <input type="submit" value="🔎" class="btn btn-light">
       </form>
-   <table class="table">
+   <table style="margin-top: 10px" class="table">
     <tr>
       <th>ID</th>
       <th>Model</th>
@@ -39,7 +39,7 @@
       </td>
         <td>
         {% for driver_ in car.drivers.all%}
-        {{ driver_.username }},
+        {{ driver_.username }} {{ forloop.last|yesno:",&#44;"|safe }}
         {% endfor %}
         </td>
     </tr>
