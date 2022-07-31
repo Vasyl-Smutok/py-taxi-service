@@ -36,6 +36,7 @@ class PublicCarView(TestCase):
             model="Test2 model",
             manufacturer=test_manufacturer1
         )
+
         response = self.client.get(CAR_URL)
         cars = Car.objects.all()
 

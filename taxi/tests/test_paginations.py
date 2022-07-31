@@ -29,12 +29,12 @@ class PaginationDriver(TestCase):
 
     def test_pagination_is_seven(self):
         response = self.client.get(DRIVER_URL)
-        self.assertTrue('is_paginated' in response.context)
-        self.assertTrue(response.context['is_paginated'] is True)
-        self.assertTrue(len(response.context['driver_list']) == 7)
+        self.assertTrue("is_paginated" in response.context)
+        self.assertTrue(response.context["is_paginated"] is True)
+        self.assertTrue(len(response.context["driver_list"]) == 7)
 
     def test_lists_all_driver(self):
-        resp = self.client.get(reverse('taxi:driver-list') + '?page=3')
-        self.assertTrue('is_paginated' in resp.context)
-        self.assertTrue(resp.context['is_paginated'] is True)
-        self.assertTrue(len(resp.context['driver_list']) == 2)
+        resp = self.client.get(reverse("taxi:driver-list") + "?page=3")
+        self.assertTrue("is_paginated" in resp.context)
+        self.assertTrue(resp.context["is_paginated"] is True)
+        self.assertTrue(len(resp.context["driver_list"]) == 2)

@@ -46,5 +46,3 @@ class PublicDriverView(TestCase):
             list(drivers)
         )
         self.assertTemplateUsed(response, "taxi/driver_list.html")
-
-
