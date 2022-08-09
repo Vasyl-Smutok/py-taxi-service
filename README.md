@@ -21,12 +21,12 @@ Python3 must be already installed
 ```shell
 git clone https://github.com/Vasyl-Smutok/taxi-service.git
 cd taxi_service
-python3 -m vemv vemv
-source vemv/bin/activate  #on macOS
-venv\Scripts\activate  #on Windows 
+python3 -m venv venv
+source venv/bin/activate  # on macOS
+venv\Scripts\activate  # on Windows 
 pip install -r requirements.txt  
 python manage.py migrate 
-python manage.py createsuperuser #create your super user
+python manage.py createsuperuser # create your super user
 python manage.py runserver # start Django Server
 ```
 
